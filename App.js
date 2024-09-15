@@ -14,7 +14,7 @@ class App extends Component{
   }
 
   entrar(){
-    if(this.state.input === ''){
+    if(!this.state.input){
       alert('Digite seu nome!');
       return;
     }
@@ -30,9 +30,9 @@ class App extends Component{
         underlineColorAndroid='transparent'
         onChangeText={ (texto) => this.setState({input: texto})}
         />
-        <Button title="Entrar" onPress={this.entrar()}/>
+        <Button title="Entrar" onPress={this.entrar}/>
         
-        <Text style={styles.texto}> </Text>
+        <Text style={styles.texto}>{this.state.nome} </Text>
 
       </View>
     );
