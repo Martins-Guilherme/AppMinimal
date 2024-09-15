@@ -7,14 +7,10 @@ class App extends Component{
     return(
       <View style = {{flex: 1, backgroundColor: '#222'}}>
         
-        <View style= {{flex: 1, backgroundColor: 'red'}}></View>
-        <View style= {{flex: 1, backgroundColor: 'green'}}>
-          <Text>Meu primeiro texto aqui</Text>
+        <View style= {{height: 65, backgroundColor: '#222'}}></View>
+        <View style= {{flex: 1, backgroundColor: 'white'}}></View>
+        <View style= {{height: 65, backgroundColor: '#222'}}>
         </View>
-        <View style= {{flex: 1, backgroundColor: 'yellow'}}>
-          <Text>Meu primeiro texto aqui</Text>
-        </View>
-        <View style= {{flex: 1, backgroundColor: 'blue'}}></View>
 
       </View>
     );
