@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { View, Text, Button } from "react-native";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+class App extends Component{
+  
+  constructor(props){
+    super(props);
+    this.state = {
+      nome: ''
+    };
+    // Deixar a função acessivel para todas as propriedades
+    this.entrar = this.entrar.bind(this);
+  }
+
+  entrar(nome){
+    this.setState({
+      nome: nome
+    })
+  }
+  
+  render(){
+    return(
+      <View style = {{marginTop: 150}}>
+        {/* Pode se criar uma função anonima ou pode acessar
+            uma função externa, primeiro se cria no construtor
+            para pode ter acesso;
+         */}
+        <Button title="Entrar" onPress={() => this.entrar('Algum texto')}/>
+
+        <Text style = {{fontSize: 45, color: 'red', textAlign: 'center', justifyContent: 'center'}}>
+            {this.state.nome}
+        </Text>
+
+      </View>
+    );
+}
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
